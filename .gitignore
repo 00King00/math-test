@@ -1,0 +1,17 @@
+
+/*
+!/src
+!package.json
+!*.babelrc
+!*.editorconfig
+!package-lock.json
+!.gitignore
+!*.md
+!webpack.config.js
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
