@@ -1,12 +1,14 @@
-var path = require('path')
-var webpack = require('webpack')
+
+let path = require('path')
+let webpack = require('webpack')
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  entry: './src/main.js',
+  entry: ['./dev/js/main.js', './dev/scss/style.scss'],
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
+    path: path.resolve(__dirname, './app'),
+    publicPath: 'app',
+    filename: './js/build.js'
   },
   module: {
     rules: [
@@ -19,11 +21,29 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader'
-        ],
+	  	include: path.resolve(__dirname, 'dev/scss'),
+		 use: ExtractTextPlugin.extract({
+          use: [{
+              loader: "css-loader",
+              options: {
+                sourceMap: true,
+                minimize: true,
+                url: false
+              }
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                sourceMap: true
+              }
+            }
+          ]})
+//        use: [
+//			
+//          'vue-style-loader',
+//          'css-loader',
+//          'sass-loader'
+//        ],
       },
       {
         test: /\.sass$/,
@@ -69,6 +89,12 @@ module.exports = {
       }
     ]
   },
+	plugins: [
+    new ExtractTextPlugin({
+      filename: './css/style.css',
+      allChunks: true,
+    }),
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
