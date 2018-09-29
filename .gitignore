@@ -1,6 +1,7 @@
 
 /*
 !/src
+!/dev
 !package.json
 !*.babelrc
 !*.editorconfig
