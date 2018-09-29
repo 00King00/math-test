@@ -8,7 +8,7 @@
 !.gitignore
 !*.md
 !webpack.config.js
-
+!/dev
 # Editor directories and files
 .idea
 *.suo
