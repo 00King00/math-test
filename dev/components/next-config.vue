@@ -1,7 +1,7 @@
 <template lang="pug">
 .next-config.active
 	span Следующий шаг:
-	.btn.btn_next {{this.btn_next}}
+	.btn.btn_next(@click="$emit('nextConfig')") {{this.btn_next}}
 	
 </template>
 
@@ -12,6 +12,6 @@ export default{
 		
 	}
 },
-	props:[btn_next]
+	props:['btn_next']
 }
 </script>

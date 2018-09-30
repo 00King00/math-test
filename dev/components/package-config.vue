@@ -31,5 +31,3 @@
 					input#individual-config(type="radio" name="package-config")
 					label(for="individual-config") Инд. предложение
 </template>
-			
-								
