@@ -5,7 +5,7 @@
 		form
 			package-config(v-show=" state == 'package-config' ")
 			config-shape
-			ConfigShape
+
 			next-config(:btn_next="btnNext" @nextConfig="nextConfig")
 
 </template>
@@ -23,7 +23,7 @@ data () {
 	return {
 		state: "package-config",
 		allConfig:['package-config','config-shape','facade','frame','furniture','complectation','decore','done'],
-		nextSteps:['Выбрать размер','Выбрать фасад'],
+		nextSteps:['Выбрать размер','Выбрать фасад','Выбрать корпус','Выбрать форнитуру','Выбрать наполнения', 'Выбрать декор','Завершить'],
 		currentStep: 0
 		
 	}
@@ -47,7 +47,7 @@ components:{
 	ConfigTitle,
 	PackageConfig,
 	NextConfig,
-	ConfigShape,
+	ConfigShape
 }
 }
 </script>

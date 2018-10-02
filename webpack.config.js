@@ -26,7 +26,7 @@ module.exports = {
           use: [{
               loader: "css-loader",
               options: {
-                sourceMap: true,
+                sourceMap: false,
                 minimize: true,
                 url: false
               }
@@ -79,6 +79,10 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+	{
+        test: /\.svg$/,
+        loader: 'vue-svg-loader',
       },
       {
         test: /\.(png|jpg|gif|svg)$/,

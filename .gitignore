@@ -10,6 +10,7 @@
 !*.md
 !webpack.config.js
 !/dev
+!*.html
 # Editor directories and files
 .idea
 *.suo

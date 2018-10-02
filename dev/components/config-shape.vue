@@ -6,23 +6,23 @@
 				.config-shape__item
 					input#shape_1(type="radio" name="shape" value="line-form")
 					label(for="shape_1") Прямая
-					img(src="images/conf-type_01.png")
+					img(src="app/images/conf-type_01.png")
 				.config-shape__item
 					input#shape_2(type="radio" name="shape" value="l-revers-form")
 					label(for="shape_2") Г-образная
-					img(src="images/conf-type_02.png")
+					img(src="app/images/conf-type_02.png")
 				.config-shape__item
 					input#shape_3(type="radio" name="shape" value="l-form")
 					label(for="shape_3") Г-образная
-					img(src="images/conf-type_03.png")
+					img(src="app/images/conf-type_03.png")
 				.config-shape__item
 					input#shape_4(type="radio" name="shape" value="p-form" checked)
 					label(for="shape_4") П-образная
-					img(src="images/conf-type_04.png")
+					img(src="app/images/conf-type_04.png")
 			.chosen-shape
 				.chosen-shape__p-form.active
 					.chosen-shape__img
-						img(src="images/conf-type-big_04.png")
+						img(src="app/images/conf-type-big_04.png")
 						label.top
 							input(type="number" min="1")
 							|  См.
@@ -34,7 +34,7 @@
 							|  См.
 				.chosen-shape__line-form
 					.chosen-shape__img
-						img(src="images/conf-type-big_01.png")
+						img(src="app/images/conf-type-big_01.png")
 						label.right
 							input(type="number" min="1")
 							|  См.
@@ -43,7 +43,7 @@
 							|  См.
 				.chosen-shape__l-revers-form
 					.chosen-shape__img
-						img(src="images/conf-type-big_02.png")
+						img(src="app/images/conf-type-big_02.png")
 						label.top
 							input(type="number" min="1")
 							|  См.
@@ -52,7 +52,7 @@
 							|  См.
 				.chosen-shape__l-form
 					.chosen-shape__img
-						img(src="images/conf-type-big_03.png")
+						img(src="app/images/conf-type-big_03.png")
 						label.top
 							input(type="number" min="1")
 							|  См.
@@ -69,3 +69,8 @@ export default{
 },
 }
 </script>
+<style scoped="true">
+	#step_1, #step_2, #step_3, #step_4, #step_5, #step_6, #step_7, #step_8 {
+		display: flex;
+	}
+</style>
