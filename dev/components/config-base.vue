@@ -1,7 +1,7 @@
 <template lang="pug">
 .step#step_3
 	mixin option-config(title, name, ...items)
-		.option-config
+		.option-config(@click="$emit('choosen')")
 			.option-config__item.product_card
 				.configuration__title= title
 				ul.option-config__list.option-config__list_kitchen
@@ -20,7 +20,7 @@
 	div(v-show="mixinName == 'complectation'")
 		+option-config('Наполнения','complectation', 'Сушка', 'Выдвижные ящики', 'Бутылочница', 'Волшебный уголок')
 	div(v-show="mixinName == 'decor'")
-		.option-config
+		.option-config(@click="$emit('choosen')")
 			.option-config__item.product_card
 				.configuration__title Декор
 				ul.option-config__list.option-config__list_kitchen

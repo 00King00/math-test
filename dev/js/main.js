@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import App from '../App.vue'
+//import App from '../App.vue'
 import AppConfig from '../App-config.vue'
 //import AppStartScreen from '../components/start-screen.vue'
 //import AppQuestion from '../components/question.vue'
 //import AppMasage from '../components/masage.vue'
 //import AppResultScreen from '../components/result-screen.vue'
-//
+
 //Vue.component('AppStartScreen', AppStartScreen);
 //Vue.component('AppQuestion', AppQuestion);
 //Vue.component('AppMasage', AppMasage);

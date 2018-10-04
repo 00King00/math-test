@@ -5,8 +5,8 @@
 		form
 			package-config(v-show=" state == 'package-config' ")
 			config-shape(v-show=" state == 'config-shape' ")
-			config-base(:mixinName="state")
-			next-config(:btn_next="btnNext" :currentStep="currentStep" :class="choosen" @nextConfig="nextConfig" @prewConfig="prewConfig")
+			config-base(:mixinName="state" @choosen='test')
+			next-config(:btn_next="btnNext" :currentStep="currentStep" :choosen="allConfig[currentStep].choosen" @nextConfig="nextConfig" @prewConfig="prewConfig" )
 
 </template>
 
@@ -23,7 +23,6 @@ export default {
 data () {
 	return {
 		state: "package-config",
-		choosen: true,
 		allConfig:[
 			{
 				confname: 'package-config',
@@ -64,10 +63,13 @@ data () {
 },
 methods:{
 	nextConfig(){
-		this.currentStep++;
-		this.state = this.allConfig[this.currentStep].confname;
-		console.log(this.state)
-		console.log(this.allConfig[1])
+			this.currentStep++;
+			this.state = this.allConfig[this.currentStep].confname;
+			
+			//console.log(this.allConfig[this.currentStep].choosen)
+			//console.log(this.allConfig[1])
+		
+		
 	},
 	prewConfig(){
 		if(this.currentStep>0){
@@ -75,6 +77,11 @@ methods:{
 			this.state = this.allConfig[this.currentStep].confname;
 
 		}
+	},
+	test(){
+		this.allConfig[this.currentStep].choosen = true;
+
+		console.log("test")
 	}
 
 },
@@ -95,3 +102,6 @@ components:{
 }
 }
 </script>
+<style lang="scss" src='./scss/style.scss'>
+	
+</style>

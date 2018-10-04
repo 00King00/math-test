@@ -1,26 +1,26 @@
 <template lang="pug">
 	.step#step_2
-		.configuration__title Выбрать размер
+		.configuration__title Выбрать размер {{choosenShape}}
 		.wrap-shape
 			.config-shape
 				.config-shape__item
-					input#shape_1(type="radio" name="shape" value="line-form")
+					input#shape_1(type="radio" name="shape" value="line-form"  v-model='choosenShape')
 					label(for="shape_1") Прямая
 					img(src="app/images/conf-type_01.png")
 				.config-shape__item
-					input#shape_2(type="radio" name="shape" value="l-revers-form")
+					input#shape_2(type="radio" name="shape" value="l-revers-form" v-model='choosenShape')
 					label(for="shape_2") Г-образная
 					img(src="app/images/conf-type_02.png")
 				.config-shape__item
-					input#shape_3(type="radio" name="shape" value="l-form")
+					input#shape_3(type="radio" name="shape" value="l-form" v-model='choosenShape')
 					label(for="shape_3") Г-образная
 					img(src="app/images/conf-type_03.png")
 				.config-shape__item
-					input#shape_4(type="radio" name="shape" value="p-form" checked)
+					input#shape_4(type="radio" name="shape" value="p-form"  v-model='choosenShape')
 					label(for="shape_4") П-образная
 					img(src="app/images/conf-type_04.png")
 			.chosen-shape
-				.chosen-shape__p-form.active
+				.chosen-shape__p-form(v-show="choosenShape == 'p-form'")
 					.chosen-shape__img
 						img(src="app/images/conf-type-big_04.png")
 						label.top
@@ -63,10 +63,11 @@
 <script>
 export default{
 	data () {
-	return {
-		
-	}
-},
+		return {
+			choosenShape: "p-form"
+		}
+}
+
 }
 </script>
 <style scoped="true">
